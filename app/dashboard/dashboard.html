@@ -159,8 +159,8 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr ng-repeat="(key,miner) in trackedAddresses">
-						<td><p class="truncate">{{key}}</p></td>
+					  <tr class="addresses" ng-repeat="(key,miner) in trackedAddresses">
+						<td><p class="truncate" uib-tooltip="{{key}}" tooltip-placement="bottom">{{key}}</p></td>
 						<td>{{miner.hash | toHashRate}}</td>
 						<td>{{miner.totalHashes | number}}</td>
 						<td>{{miner.amtDue | toXMR | number:10}} XMR</td>

@@ -574,3 +574,7 @@ ul.list-justify > li span {
   color: #F9354C;
 }
 
+.addresses .tooltip-inner {
+  max-width: 900px;
+}
+
