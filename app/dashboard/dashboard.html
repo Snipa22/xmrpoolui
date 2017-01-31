@@ -86,7 +86,7 @@
 									<p>Height<span class="label-text" ng-bind-html="poolStats[pooltype].pool_statistics.lastBlockFound | number | hashToLink: 'block'"></span></p>
 								</li>
 								<li>
-									<p>Last Block<span class="label-text"><p class="truncate">{{lastBlock[pooltype].hash}}</p></span></p>
+									<p>Last Block<span class="label-text truncate" ng-bind-html="lastBlock[pooltype].hash | hashToLink: 'block'"></span></p>
 								</li>
 								<li>
 									<p>Block Reward<span class="label-text">{{lastBlock[pooltype].value | toXMR | number:10}} XMR</span></p>
