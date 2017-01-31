@@ -62,6 +62,7 @@ var app = angular.module('poolui', [
 app.controller('AppCtrl', function($scope, $route, dataService, timerService, minerService, $localStorage, ngAudio){
 	$scope.poolList = ["pplns", "pps", "solo"];
 	$scope.poolStats = {};
+    $scope.lastBlock = {};
 	
 	// for miner tracking
 	$scope.yourTotalHashRate = 0;

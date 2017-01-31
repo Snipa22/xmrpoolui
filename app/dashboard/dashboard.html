@@ -83,13 +83,13 @@
 									<p>Hash Rate<span class="label-text">{{ poolStats[pooltype].pool_statistics.hashRate | toHashRate }}</span></p>
 								</li>
 								<li>
-									<p>Height<span class="label-text" ng-bind-html="poolStats[pooltype].pool_statistics.lastBlockFound | number | hashToLink: 'block'"></span></p>
+									<p>Height<span class="label-text">{{poolStats[pooltype].pool_statistics.lastBlockFound | number}}</span></p>
 								</li>
 								<li>
-									<p>Last Block<span class="label-text">Todo</span></p>
+									<p>Last Block<span class="label-text truncate" ng-bind-html="lastBlock[pooltype].hash | hashToLink: 'block'"></span></p>
 								</li>
 								<li>
-									<p>Block Reward<span class="label-text">Todo</span></p>
+									<p>Block Reward<span class="label-text">{{lastBlock[pooltype].value | toXMR | number:10}} XMR</span></p>
 								</li>
 								<li>
 									<p>Time Found<span class="label-text" am-time-ago="poolStats[pooltype].pool_statistics.lastBlockFoundTime * 1000" uib-tooltip="{{poolStats[pooltype].pool_statistics.lastBlockFoundTime*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom">Never</span></p>
