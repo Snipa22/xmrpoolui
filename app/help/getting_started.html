@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-md-12">
+		<!-- POOL STATS -->
+		<div class="panel panel-headline">
+			<div class="panel-heading">
+				<h3 class="panel-title">Getting Started with XMRPool.net</h3>
+				<p class="panel-subtitle">Pick your mining type a port and get mining</p>
+				<p class="panel-subtitle">(Need help setting up your miner? <a href="#/help/faq">Check our FAQ</a>)</p>
+			</div>
+			<uib-tabset class="" >
+				<uib-tab index="$index" ng-repeat="(pooltype, ports) in portsList" heading="{{pooltype}}">
+					<div class="row">
+						<div class="col-md-12">
+						  <div class="panel">
+							<div class="panel-heading">
+							  <h3 class="panel-title">Getting started with XMR Pool</h3>
+							</div>
+							<div class="panel-body no-padding">
+							  <table class="table table-striped">
+								<thead>
+								  <tr>
+									<th>Server</th>
+									<th>Port</th>
+									<th>Port Type</th>
+									<th>Difficulty</th>
+									<th>Miners</th>
+									<th>Current Block ID</th>
+									<th>Block Time</th>
+									<th>Description</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr ng-repeat="portinfo in ports">
+									<td>{{portinfo.host.hostname}}</td>
+									<td>{{portinfo.port}}</td>
+									<td>{{portinfo.pool_type}}</td>
+									<td>{{portinfo.difficulty}}</td>
+									<td>{{portinfo.miners}}</td>
+									<td>{{portinfo.host.blockID}}</td>
+									<td>{{portinfo.host.blockIDTime * 1000 | date: 'hh:mm:ss - dd/mm/yy'}}</td>
+									<td>{{portinfo.description}}</td>
+								  </tr>
+								</tbody>
+							  </table>
+							</div>
+						  </div>
+						</div>
+					</div>
+				</uib-tab>
+			</uib-tabset>
+		</div>
+		<!-- END POOL STATS -->
+	</div>
+</div>
+
+

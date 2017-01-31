@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-md-12">
+	  <div class="panel">
+	    <div class="panel-heading">
+	      <h3 class="panel-title">Blocks Found</h3>
+	    </div>
+	    <div class="panel-body no-padding">
+	      <table class="table table-striped">
+	        <thead>
+	          <tr>
+	            <th>Time Sent</th>
+	            <th>Transaction Hash</th>
+	            <th>Amount</th>
+	            <th>Fee</th>
+	            <th>Mixin</th>
+	            <th>Payees</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr ng-repeat="payment in payments.pplns">
+	            <td><span am-time-ago="payment.ts" uib-tooltip="{{payment.ts*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span></td>
+	            <td ng-bind-html="payment.hash | hashToLink: 'transaction'"></td>
+	            <td>{{payment.value | toXMR}} XMR</td>
+	            <td>{{payment.fee | toXMR }} XMR</td>
+	            <td>{{payment.mixins}}</td>
+	            <td>{{payment.payees}}</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+	    <div class="panel-footer">
+	      <div class="row">
+	        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Pagination todo</span></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>

@@ -1,0 +1,97 @@
+<div class="row">
+	<div class="col-md-3">
+	  <div class="metric">
+		<span class="icon"><i class="fa fa-hashtag"></i></span>
+		<p>
+		  <span class="number">{{poolStats.global.hashRate | toHashRate}}</span>
+		  <span class="title">Hashrate</span>
+		</p>
+	  </div>
+	</div>
+	<div class="col-md-3">
+	  <div class="metric">
+		<span class="icon"><i class="fa fa-truck"></i></span>
+		<p>
+		  <span class="number">{{poolStats.global.miners}}</span>
+		  <span class="title">Miners Connected</span>
+		</p>
+	  </div>
+	</div>
+	<div class="col-md-3">
+	  <div class="metric">
+	    <span class="icon"><i class="fa fa-database"></i></span>
+	    <p>
+	      <span class="number">{{poolStats.global.totalBlocksFound}}</span>
+	      <span class="title">Blocks Found (Last <span am-time-ago="poolStats.global.lastBlockFoundTime*1000" uib-tooltip="{{poolStats.global.lastBlockFoundTime*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span>)</span>
+	    </p>
+	  </div>
+	</div>
+	<div class="col-md-3">
+	  <div class="metric">
+		<span class="icon"><i class="fa fa-money"></i></span>
+		<p>
+		  <span class="number">{{poolStats.global.totalMinersPaid}}</span>
+		  <span class="title">Miners Paid</span>
+		</p>
+	  </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<div class="panel panel-headline">
+			<div class="panel-heading">
+				<h3 class="panel-title">Welcome to XMRpool.net!</h3>
+				<p class="panel-subtitle">A modern, hard-fork compatible monero mining pool, featuring PPS, PPLNS, and solo ports.</p>
+			</div>
+			<div class="panel-body">
+				<h4>Notes</h4>
+				<p>This project is still in development. Please stay tuned for more features and changes!</p>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-headline">
+			<div class="panel-heading">
+				<h3 class="panel-title">Pool Config</h3>
+			</div>
+			<div class="panel-body">
+				<ul class="list-unstyled stats-list">
+					<li>
+						<p>PPS Fee<span class="label-text">{{config.pps_fee}}%</span></p>
+					</li>
+					<li>
+						<p>PPLNS Fee<span class="label-text">{{config.pplns_fee}}%</span></p>
+					</li>
+					<li>
+						<p>Solo Fee<span class="label-text">{{config.solo_fee}}%</span></p>
+					</li>
+					<li>
+						<p>BTC Fee<span class="label-text">{{config.btc_fee}}%</span></p>
+					</li>
+					<li>
+						<p>Minimum payout (Wallet)<span class="label-text">{{config.min_wallet_payout | toXMR}} XMR</span></p>
+					</li>
+					<li>
+						<p>Minimum payout (BTC)<span class="label-text">{{config.min_btc_payout | toXMR}} XMR</span></p>
+					</li>
+					<li>
+						<p>Minimum payout (Exchange)<span class="label-text">{{config.min_exchange_payout | toXMR}} XMR</span></p>
+					</li>
+					<li>
+						<p>Core Devs Donation<span class="label-text">{{config.dev_donation | toXMR}}%</span></p>
+					</li>
+					<li>
+						<p>Pool Devs Donation<span class="label-text">{{config.pool_dev_donation}}%</span></p>
+					</li>
+					<li>
+						<p>Block Maturity Depth<span class="label-text">{{config.maturity_depth}}</span></p>
+					</li>
+					<li>
+						<p>Minimum Denomination<span class="label-text">{{config.min_denom | toXMR}}</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

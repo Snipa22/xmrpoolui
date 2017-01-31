@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="poolui" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="poolui" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="poolui" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="poolui" class="no-js"> <!--<![endif]-->
+<head>
+<title>XMRPool.net - Mine XMR/Monero or BTC/Bitcoin</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="vendor/linearicons/dist/web-font/style.css">
+  <link rel="stylesheet" href="app.css">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <!-- ICONS -->
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/assets/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/assets/favicon.png">
+</head>
+<body ng-controller="AppCtrl">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- WRAPPER -->
+  <div id="wrapper">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo-wrapper">
+        <a href="#/home"><!-- <img src="assets/logo.png" alt="XMR Pool Logo" class="img-responsive logo"> -->XMRPool.net</a>
+      </div>
+      <div class="sidebar-scroll">
+        <nav>
+          <ul class="nav">
+            <li><a href="#/home" ng-class="isActivePage('home')"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+            <li><a href="#/dashboard" ng-class="isActivePage('dashboard')"><i class="lnr lnr-star"></i> <span>Dashboard</span></a></li>
+            <li><a href="#/blocks" ng-class="isActivePage('blocks')"><i class="lnr lnr-layers"></i> <span>Blocks</span></a></li>
+            <li><a href="#/payments" ng-class="isActivePage('payments')"><i class="lnr lnr-license"></i> <span>Payment</span></a></li>
+            <li><a href="#/network" ng-class="isActivePage('network')"><i class="lnr lnr-earth"></i> <span>Network</span></a></li>
+            <li><a href="#/help/chat" ng-class="isActivePage('support')"><i class="lnr lnr-users"></i> <span>Support</span></a></li>
+            <li><a href="#/help/getting_started" ng-class="isActivePage('help')"><i class="lnr lnr-rocket"></i> <span>Getting Started</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-btn">
+            <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+          </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+              <span class="sr-only">Toggle Navigation</span>
+              <i class="fa fa-bars icon-nav"></i>
+            </button>
+          </div>
+          <div id="navbar-menu" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav hidden-xs" ng-cloak>
+              <li><a>Network : <b>{{network.difficulty | difficultyToHashRate | toHashRate}}</b></a></li>
+              <li><a>Pool : <b>{{poolStats.global.hashRate | toHashRate}}</b></a></li>
+              <li><a href="#/dashboard">You : <b>{{yourTotalHashRate | toHashRate}}</b></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#/help/getting_started">Ports</a></li>
+                  <li><a href="#/help/faq">FAQ</a></li>
+                  <li><a href="#/help/chat">Chat</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- END NAVBAR -->
+      <!-- CONTENT -->
+      <div class="main-content">
+        <div class="container-fluid">
+          <div ng-view></div>
+        </div>
+      </div>
+      <!-- END CONTENT -->
+      <footer>
+        <div class="container-fluid">
+          <p class="copyright">Need to write something here!</p>
+        </div>
+      </footer>
+    </div>
+    <!-- END MAIN -->
+  </div>
+  <!-- END WRAPPER -->
+  <script src="vendor/jquery/dist/jquery.js"></script>
+  <script src="vendor/moment/moment.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular-route/angular-route.js"></script>
+  <script src="vendor/ngStorage/ngStorage.js"></script>
+  <script src="vendor/angular-moment/angular-moment.js"></script>
+  <script src="vendor/angular-audio/app/angular.audio.js"></script>
+  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="utils/strings.js"></script>
+  <script src="utils/services.js"></script>
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="dashboard/dashboard.js"></script>
+  <script src="blocks/blocks.js"></script>
+  <script src="payments/payments.js"></script>
+  <script src="network/network.js"></script>
+  <script src="help/chat.js"></script>
+  <script src="help/getting_started.js"></script>
+  <script src="help/faq.js"></script>
+</body>
+</html>
