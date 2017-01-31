@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('DashboardCtrl', function($scope , $route, dataService, timerService, minerService) {
-	$scope.paymentAddress = "48s97vfViXi27Yd8gC9dgDbyToXzyFw2UM9BTFGsjKtH5mf8EHMnoe8gLyceFwNqnUMLnZEkpeTx8NE7tyxhy7ecL3JEjiB";
+	$scope.paymentAddress = "";
 
 	$scope.addAddress = function (){
 		if ($scope.paymentAddress){
