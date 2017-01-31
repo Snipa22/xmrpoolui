@@ -14,16 +14,18 @@
 	            <th>Hash</th>
 	            <th>Shares</th>
 	            <th>Valid</th>
+			    <th>Pool</th>
 	          </tr>
 	        </thead>
 	        <tbody>
-	          <tr ng-repeat="block in blocks.pplns">
+	          <tr ng-repeat="block in blocks.global">
+			    <td><span am-time-ago="block.ts" uib-tooltip="{{block.ts*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span></td>
 	            <td>{{block.height | number}}</td>
 	            <td>{{block.diff | number}}</td>
 	            <td ng-bind-html="block.hash | hashToLink: 'block'"></td>
-	            <td><span am-time-ago="block.ts" uib-tooltip="{{block.ts*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span></td>
 	            <td>{{block.shares | number}}</td>
 	            <td><span class="label label-success">{{block.valid}}</span></td>
+			    <td>{{block.pool_type}}</td>
 	          </tr>
 	        </tbody>
 	      </table>

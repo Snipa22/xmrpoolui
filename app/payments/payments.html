@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 	  <div class="panel">
 	    <div class="panel-heading">
-	      <h3 class="panel-title">Blocks Found</h3>
+	      <h3 class="panel-title">Payments Made</h3>
 	    </div>
 	    <div class="panel-body no-padding">
 	      <table class="table table-striped">
@@ -19,7 +19,7 @@
 	        <tbody>
 	          <tr ng-repeat="payment in payments.pplns">
 	            <td><span am-time-ago="payment.ts" uib-tooltip="{{payment.ts*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span></td>
-	            <td ng-bind-html="payment.hash | hashToLink: 'transaction'"></td>
+	            <td ng-bind-html="payment.hash | hashToLink: 'tx'"></td>
 	            <td>{{payment.value | toXMR}} XMR</td>
 	            <td>{{payment.fee | toXMR }} XMR</td>
 	            <td>{{payment.mixins}}</td>
