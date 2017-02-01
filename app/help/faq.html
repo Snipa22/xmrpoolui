@@ -5,6 +5,32 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">FAQ!</h3>
 				<p class="panel-subtitle">FAQ Stuff!</p>
+				<h3 class="panel-title">Miner Setup</h3>
+				<p class="panel-subtitle">
+					XMRPool.net also supports integrated addresses.  Samples are below.<br>
+					The only required fields in a username/password are the address and identifier!<br>
+					Username Format: address.paymentID+FixedDiff<br>
+					Password Format: MinerIdentifier:Email<br>
+					Samples:<br>
+					<table class="table table-striped">
+						<thead>
+						<tr>
+							<th>Username/Password</th>
+							<th>Sample</th>
+							<th>Usage</th>
+							<th>Valid</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr ng-repeat="sample in samples">
+							<td>{{sample.type}}</td>
+							<td>{{sample.sample}}</td>
+							<td>{{sample.desc}}</td>
+							<td>{{sample.valid}}</td>
+						</tr>
+						</tbody>
+					</table>
+				</p>
 			</div>
 			<div class="panel-body">
 			</div>

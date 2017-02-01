@@ -5,7 +5,11 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">Getting Started with XMRPool.net</h3>
 				<p class="panel-subtitle">Pick your mining type a port and get mining</p>
-				<p class="panel-subtitle">(Need help setting up your miner? <a href="#/help/faq">Check our FAQ</a>)</p>
+				<p class="panel-subtitle">(Need help setting up your miner? <a href="#/help/faq">Check our FAQ</a>)</p><br>
+				<p class="panel-subtitle">Curious what the port types are?  Most miners are best served by PPLNS, which
+					helps to combat pool hopping and ensures a good payout for miners.  PPS is the most stable option of
+					the lot, ensuring that you get paid out for every share, but with a higher fee for the risk the pool
+					takes.  Solo ports are for those who like to gamble and want to try and find their own block!</p>
 			</div>
 			<uib-tabset class="" >
 				<uib-tab index="$index" ng-repeat="(pooltype, ports) in portsList" heading="{{pooltype}}">
