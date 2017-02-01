@@ -10,4 +10,8 @@ app.controller('PaymentsCtrl', function($scope, dataService) {
 	dataService.getData("/pool/payments/pps", function(data){
 		$scope.payments.pps = data;
 	});
+
+    dataService.getData("/pool/payments", function(data){
+        $scope.payments.global = data;
+    });
 });
