@@ -75,6 +75,7 @@ gulp.task('manifest', function(){
       filename: 'app.manifest',
       exclude: 'app.manifest'
      }))
+    .pipe(connect.reload())
     .pipe(gulp.dest('build'));
 });
 

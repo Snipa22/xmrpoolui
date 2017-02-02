@@ -96,11 +96,22 @@ app.controller('AppCtrl', function($scope, $window, $route, dataService, timerSe
 
 	var updateCache = function () {
 		var appCache = window.applicationCache;
-		// appCache.update(); // Attempt to update the user's cache.
-		if (appCache.status == window.applicationCache.UPDATEREADY) {
-			appCache.swapCache();  // The fetch was successful, swap in the new cache.
-			$window.location.reload();
+
+		var update = function() {
+			if (appCache.status == window.applicationCache.UPDATEREADY) {
+				appCache.swapCache();  // The fetch was successful, swap in the new cache.
+				$window.location.reload();
+			}
 		}
+
+		appCache.addEventListener("updateready", function(event) {
+		    console.log("UpdateReady Event Caught");
+		    update();
+		}, false);
+		
+		update();
+		 // appCache.update(); Attempt to update the user's cache.
+		
 	}
 
 	var loadData = function () {
