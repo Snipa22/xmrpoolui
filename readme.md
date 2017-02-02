@@ -14,7 +14,12 @@ Requires NodeJS
 
 ```sh
 $ npm install
-$ npm start
+$ npm start # starts gulp + livereload, serves from ./build
+```
+
+## Deploy
+```sh
+$ gulp build # writes to ./build
 ```
 
 ### Todo

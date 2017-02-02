@@ -79,4 +79,5 @@ gulp.task('manifest', function(){
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', [ 'html', 'css', 'js', 'assets', 'vendor', 'manifest', 'connect', 'watch' ]);
+gulp.task('build', [ 'html', 'css', 'js', 'assets', 'vendor', 'manifest' ]);
+gulp.task('default', [ 'build', 'connect', 'watch' ]);
