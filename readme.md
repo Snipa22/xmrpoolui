@@ -22,6 +22,9 @@ $ npm start
 * Pagination for Payments / Blocks pages.
 * Reponsive tables.
 * Network stats page.
+* Wrap Around with gulp
+* Woker pages
+* 
 
 #### Coffee :P ?
 42yCGRP2p6bZzMjJxKpJtTFRz2x3X3eBYD97T17zdxC9NiGNWafCaU54MKWBZkHb9AVb4XBgcjkPGW8hjQyBM2vMMvVCzTj
