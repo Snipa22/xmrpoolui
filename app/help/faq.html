@@ -5,6 +5,11 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">FAQ!</h3>
 				<p class="panel-subtitle">FAQ Stuff!</p>
+				<h3 class="panel-title">What is Payment Slewing?</h3>
+				<p>
+					As many miners are aware, the advent of the RingCT system has increased block size, payouts, and things of that nature, due to this, the cost of performing transactions has gone up immensely for pool operators, from .001 per txn to .012-ish per txn/output.  Due to this, pools are either forced to raise fees, or charge for outbound txns to keep from losing money.  As we don't find it fair to punish miners for mining, we've introduced a sliding fee, from .013 to 0 XMR per withdrawl.</p><p>
+					With this, we're intending on offering changing payouts (API's coming soon!), so you can set a withdrawl point that works for you and your use case.  The current sliding fee is .014 xmr/txn at .3 XMR, down to 0 at 4 XMR.  This is based on the AMOUNT PAID, and is not fixed, so even if you're set to .3 payouts, and get a .6 payout, your fee will be automatically reduced.  We find this to be more viable than bumping up fees (We'd need to nearly double them.), and better than implementing a fixed amount for all txns.  The pool is not entirely here to make money, so as you hit 4 (Which equates to a pool amount made of .024, or the full value of a ringCT payment), we drop the fee to 0, letting the pool eat the entire value, and giving an average profit of .005 with current-ish sizes.  We will of course, be reviewing this as the block sizes increase and the fees drop, as we want to ensure everyone's happy!
+				</p>
 				<h3 class="panel-title">Miner Setup</h3>
 				<p class="panel-subtitle">
 					XMRPool.net also supports integrated addresses.  Samples are below.<br>
