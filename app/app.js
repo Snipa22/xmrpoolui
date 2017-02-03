@@ -59,7 +59,7 @@ var app = angular.module('poolui', [
 
 	}]);
 
-app.controller('AppCtrl', function($scope, $route, dataService, timerService, minerService, $localStorage, ngAudio){
+app.controller('AppCtrl', function($scope, $window, $route, dataService, timerService, minerService, $localStorage, ngAudio){
 	$scope.poolList = ["pplns", "pps", "solo"];
 	$scope.poolStats = {};
     $scope.lastBlock = {};
@@ -94,6 +94,26 @@ app.controller('AppCtrl', function($scope, $route, dataService, timerService, mi
 		($scope.globalSiren) ? $scope.sirenAudio.play() : $scope.sirenAudio.stop();
 	}
 
+	var updateCache = function () {
+		var appCache = window.applicationCache;
+
+		var update = function() {
+			if (appCache.status == window.applicationCache.UPDATEREADY) {
+				appCache.swapCache();  // The fetch was successful, swap in the new cache.
+				$window.location.reload();
+			}
+		}
+
+		appCache.addEventListener("updateready", function(event) {
+		    console.log("UpdateReady Event Caught");
+		    update();
+		}, false);
+		
+		update();
+		 // appCache.update(); Attempt to update the user's cache.
+		
+	}
+
 	var loadData = function () {
 		dataService.getData("/pool/stats", function(data){
 			$scope.poolList = data.pool_list;
@@ -115,6 +135,7 @@ app.controller('AppCtrl', function($scope, $route, dataService, timerService, mi
 	timerService.register(loadData, 'global');
 	// Also Load immediately
 	loadData();
+	updateCache();
 
 	// Start minerservice after starting timer, only one callback supported at a time
 	minerService.start(function(addrStats) {
