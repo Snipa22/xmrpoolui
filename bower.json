@@ -15,5 +15,8 @@
     "ngstorage": "^0.3.11",
     "font-awesome": "^4.7.0",
     "angular-audio": "^1.7.3"
+  },
+  "resolutions": {
+    "angular": "1.5.11"
   }
 }
