@@ -17,7 +17,7 @@
 	          </tr>
 	        </thead>
 	        <tbody>
-	          <tr ng-repeat="payment in payments.pplns">
+	          <tr ng-repeat="payment in payments.global">
 	            <td><span am-time-ago="payment.ts" uib-tooltip="{{payment.ts*1000 | date:'hh:mm:ss dd/mm/yy'}}" tooltip-placement="bottom"></span></td>
 	            <td ng-bind-html="payment.hash | hashToLink: 'tx'"></td>
 	            <td>{{payment.value | toXMR}} XMR</td>

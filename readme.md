@@ -14,7 +14,12 @@ Requires NodeJS
 
 ```sh
 $ npm install
-$ npm start
+$ npm start # starts gulp + livereload, serves from ./build
+```
+
+## Deploy
+```sh
+$ gulp build # writes to ./build
 ```
 
 ### Todo
@@ -22,6 +27,8 @@ $ npm start
 * Pagination for Payments / Blocks pages.
 * Reponsive tables.
 * Network stats page.
+* Worker pages
+* Charts
 
 #### Coffee :P ?
 42yCGRP2p6bZzMjJxKpJtTFRz2x3X3eBYD97T17zdxC9NiGNWafCaU54MKWBZkHb9AVb4XBgcjkPGW8hjQyBM2vMMvVCzTj
